@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import Form from './components/form';
-import Members from './components/members';
+import Form from './components/form/form';
+import Members from './components/members/members';
 
 function App() {
-  const [members, setMembers] = useState([{id: 1, fullName: 'Ryan McInnis', email: 'ryan@email.com', role: 'Dude'}]);
+  const [members, setMembers] = useState([]);
   
   const addMem = memObj => {
     setMembers([...members, {...memObj, id: Date.now() }])
@@ -12,10 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+        <h1>Members Directory</h1>
         <Form addMem={addMem} />
         <Members members={members} />
-      </header>
     </div>
   );
 }

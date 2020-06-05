@@ -1,5 +1,6 @@
 import React from 'react';
-import Member from './member'
+import Member from '../member/member'
+import './members.css';
 
 const Members = ({members}) => {
   return(
