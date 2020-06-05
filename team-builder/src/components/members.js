@@ -1,8 +1,11 @@
 import React from 'react';
+import Member from './member'
 
-const Members = props => {
+const Members = ({members}) => {
   return(
-    <div></div>
+    <div className='members-container'>
+      {members.map(member => <Member member={member} />)}
+    </div>
   )
 }
 
