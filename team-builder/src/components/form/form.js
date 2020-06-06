@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './form.css'
 
+//issue: radio buttons were staying selected, if two newMem in a row selected same team, second newMem wouldnt have team added,
+//added checked={newMem.team} now radio buttons reset, everything works, but the opposite radio button you select is highlighted
+
 const Form = props => {
 
   const [newMem, setNewMem] = useState({fullName: '', email: '', role: '', team: ''})
@@ -37,11 +40,11 @@ const Form = props => {
         <div className='radio-buttons'>
           <div>
             <label htmlFor='red-team'>RedTeam</label>
-            <input id='red-team' type='radio' onChange={handleChange} name='team' value='red' required />
+            <input id='red-team' type='radio' checked={newMem.team} onChange={handleChange} name='team' value='red' required />
           </div>
           <div>
             <label htmlFor='blue-team'>BlueTeam</label>
-            <input id='blue-team' type='radio' onChange={handleChange} name='team' value='blue' required />
+            <input id='blue-team' type='radio' checked={newMem.team} onChange={handleChange} name='team' value='blue' required />
           </div>
         </div>  
         <button type='submit'>Submit</button>
