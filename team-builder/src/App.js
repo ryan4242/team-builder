@@ -28,10 +28,10 @@ function App() {
 
   return (
     <div className="App">
-        <h1>Members Directory</h1>
-        <Form addMem={addMem} memberToEdit={memberToEdit} edit={editMember} />
-        <div className='teams-container'>
-        <div className='blue'>
+      <h1>Members Directory</h1>
+      <Form addMem={addMem} memberToEdit={memberToEdit} edit={editMember} />
+      <div className='teams-container'>
+        <div>
           <h2>Blue Team</h2>
           {members.map(member => {
             if(member.team == 'blue') {
@@ -39,7 +39,7 @@ function App() {
             }
           })}    
         </div>
-        <div classsName='red'>
+        <div>
           <h2>Red Team</h2>
             {members.map(member => {
             if(member.team == 'red') {
@@ -47,8 +47,7 @@ function App() {
             }
           })}  
         </div>
-        </div>
-        
+      </div>       
     </div>
   );
 }

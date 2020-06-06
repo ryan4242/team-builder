@@ -3,14 +3,13 @@
   color: #282c34;
   padding: 15px;
   border-radius: 10px;
+  margin-top: 1rem;
 }
 
-.blue {
-  background: blue;
-  color: white;
-}
-
-.red {
+.mem-card.red {
   background: red;
-  color: white
+}
+
+.mem-card.blue {
+  background: blue;
 }
