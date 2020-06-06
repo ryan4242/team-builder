@@ -1,0 +1,15 @@
+.mem-card {
+  background: #F5E6E8;
+  color: #282c34;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.mem-card.red {
+  background: red;
+}
+
+.mem-card.blue {
+  background: blue;
+}

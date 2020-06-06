@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.teams-container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
