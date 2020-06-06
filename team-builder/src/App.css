@@ -13,3 +13,11 @@ h1 {
   font-size: 2.5rem;
 }
 
+.teams-container {
+  width: 100vw;
+  display: flex;
+}
+
+
+
+

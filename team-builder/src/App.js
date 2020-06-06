@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Form from './components/form/form';
-import Members from './components/members/members';
+import Member from './components/member/member';
 
 function App() {
   const [members, setMembers] = useState([]);
@@ -22,22 +22,33 @@ function App() {
       }
       return member;
     })
-  setMembers([...newInfo]);
-  setMemberToEdit({fullName: '', email: '', role: ''})
-
-//    const newMemList = members.map(member => {
-//      if(member.key === memberToEdit.key) {
-//        member = memberToEdit;
-//      }
-//    })
-    
+    setMembers([...newInfo]);
+    setMemberToEdit({fullName: '', email: '', role: ''})    
   }
 
   return (
     <div className="App">
         <h1>Members Directory</h1>
         <Form addMem={addMem} memberToEdit={memberToEdit} edit={editMember} />
-        <Members members={members} editMem={setMemberToEdit} />
+        <div className='teams-container'>
+        <div className='blue'>
+          <h2>Blue Team</h2>
+          {members.map(member => {
+            if(member.team == 'blue') {
+              return <Member key={member.key} member={member} editMem={setMemberToEdit} />
+            }
+          })}    
+        </div>
+        <div classsName='red'>
+          <h2>Red Team</h2>
+            {members.map(member => {
+            if(member.team == 'red') {
+              return <Member key={member.key} member={member} editMem={setMemberToEdit} />
+            }
+          })}  
+        </div>
+        </div>
+        
     </div>
   );
 }

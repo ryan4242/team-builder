@@ -3,7 +3,7 @@ import './form.css'
 
 const Form = props => {
 
-  const [newMem, setNewMem] = useState({fullName: '', email: '', role: ''})
+  const [newMem, setNewMem] = useState({fullName: '', email: '', role: '', team: ''})
 
   useEffect(() => {
     setNewMem(props.memberToEdit)
@@ -11,7 +11,6 @@ const Form = props => {
 
   const handleChange = event => {
     setNewMem({...newMem, [event.target.name]: event.target.value})
-    console.log(newMem)
   }
   
   const submitForm = e => {
@@ -22,8 +21,7 @@ const Form = props => {
     } else {
       props.edit(newMem)
     }
-    
-    setNewMem({fullName: '', email: '', role: ''});
+    setNewMem({fullName: '', email: '', role: '', team: ''});
   };
  
   return(
@@ -35,6 +33,17 @@ const Form = props => {
         <input id='email' type='email' placeholder='email' onChange={handleChange} name='email' value={newMem.email} required />
         <label htmlFor='role'>Position:</label>
         <input id='role' type='text' placeholder='Position title' onChange={handleChange} name='role' value={newMem.role} required />
+        <p>Select a team name:</p>
+        <div className='radio-buttons'>
+          <div>
+            <label htmlFor='red-team'>RedTeam</label>
+            <input id='red-team' type='radio' onChange={handleChange} name='team' value='red' required />
+          </div>
+          <div>
+            <label htmlFor='blue-team'>BlueTeam</label>
+            <input id='blue-team' type='radio' onChange={handleChange} name='team' value='blue' required />
+          </div>
+        </div>  
         <button type='submit'>Submit</button>
       </form>
     </div>
